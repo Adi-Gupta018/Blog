@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+We didn't find your requested page.
+{% endblock title %}
+
+{% block content %}
+<h1>Whoops!</h1>
+404 page not found</br>
+Try our <a href="{% url "starting-page"%}">homepage</a> instead.
+{% endblock content %}
+

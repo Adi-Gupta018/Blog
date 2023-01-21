@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+My Blog
+{% endblock  %}
+
+{% block css_files %}
+ <link rel="stylesheet" href="{% static "blog/index.css"%}" />
+ <link rel="stylesheet" href= "{% static "blog/post.css" %}" />
+{% endblock  %}
+
+{% block content %}
+ 
+
+ <section id="welcome">
+    <header>
+        <img src=" {%static "blog/images/Me.jpeg" %} " alt="Adi - the author of this Blog" />
+        <h2> ADITYA'S BLOG</h2>
+    </header>
+    <p> Hi, I am Aditya and I love to blog about tech and the world!!</p>
+ </section>
+
+ <section id="latest-posts">
+    <h2>My thoughts</h2>
+
+    <ul>
+        {% for post in posts %}
+         {% include "blog/includes/post.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+ <section id="info">
+    <h2>What I do</h2>
+    <p>
+        I am an Engineering student who love to try and learn new things and technologies.
+    </p>
+    <p>
+        My goal is to keep growing and helping the people around me.
+    </p>
+</section>
+
+{% endblock %}
